@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head  >
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - приложение ASP.NET</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="~/Content/Site.css" />
+
+</head>
+<body class="nav-top" ;>
+    <div class=" navbar-inverse navbar-fixed-top nav-top" >
+        <div class="container">
+            <div class="navbar-header">
+
+                @Html.ActionLink("Главная", "Index", "Home", new { area = "" }, new { @class = "navbar-brand nav-top1" })
+                @Html.ActionLink("Ваш статус", "Roles", "Home", new { area = "" }, new { @class = "navbar-brand nav-top1" })
+            </div>
+            <div class="navbar-collapse collapse nav-top">
+                <ul class="nav navbar-nav ">
+                    <li>@Html.ActionLink("О нас", "About", "Home", new { area = "" }, new { @class = "navbar-brand nav-top" })</li>
+                    <li>@Html.ActionLink("Статьи", "Articles", "Home", new { area = "" }, new { @class = "navbar-brand nav-top" })</li>
+                    <li>@Html.ActionLink("Отзывы", "Reviews", "Home", new { area = "" }, new { @class = "navbar-brand nav-top" })</li>
+                    <li>@Html.ActionLink("Животные", "Animals", "Home", new { area = "" }, new { @class = "navbar-brand nav-top" })</li>
+                    <li>@Html.ActionLink("Приюты", "Shelters", "Home", new { area = "" }, new { @class = "navbar-brand nav-top" })</li>
+                    <li>@Html.ActionLink("Помощь", "Help", "Home", new { area = "" }, new { @class = "navbar-brand nav-top" })</li>
+                    <li>@Html.ActionLink("Связаться", "Contact", "Home", new { area = "" }, new { @class = "navbar-brand nav-top" })</li>
+                    <li>@Html.ActionLink("Админ", "Admin", "Home", new { area = "" }, new { @class = "navbar-brand nav-top" })</li>
+                    <li>@Html.Partial("_LoginPartial")</li>
+
+                </ul>
+
+
+            </div>
+            
+                    
+        </div>
+       
+    </div>
+    
+       
+ 
+    <div>
+        <p class="main-header ">
+            Наш сайт- это сервис поиска домашних животных, находящихся в приютах 
+        </p>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - мое приложение ASP.NET</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

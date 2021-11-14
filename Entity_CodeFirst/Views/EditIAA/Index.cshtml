@@ -1,0 +1,76 @@
+﻿@model IEnumerable<Entity_CodeFirst.Models.infoaboutanimal>
+
+@{
+    ViewBag.Title = "Список животных для редактирования";
+}
+
+<h2>Список животных для редактирования</h2>
+<ul>
+    <li>@Html.ActionLink("Вывести полный список животных", "Animals", "Home", new { area = "" },new { @class = "article3" })</li>
+    <li>
+        @Html.ActionLink("Создать учётную запись нового животного", "Create",new { area = "" }, new { @class = "article3" } )
+    </li>
+</ul>
+
+    
+  
+
+<table class="table">
+    
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Weight)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Height)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Durationin_in__helter_in_monthes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Deseases)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SizeAnimal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PhotoAnimal)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Weight)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Height)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Durationin_in__helter_in_monthes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Deseases)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SizeAnimal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PhotoAnimal)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdinfoAboutAnimal }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdinfoAboutAnimal }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdinfoAboutAnimal })
+        </td>
+    </tr>
+}
+
+</table>

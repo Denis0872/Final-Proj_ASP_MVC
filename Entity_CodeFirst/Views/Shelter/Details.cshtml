@@ -1,0 +1,58 @@
+﻿@model Entity_CodeFirst.Models.shelter
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>shelter</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.region.City)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.region.City)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Adress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Adress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LimitAnimals)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LimitAnimals)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CountAnimals)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CountAnimals)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idshelter }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

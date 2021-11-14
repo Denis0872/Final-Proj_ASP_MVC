@@ -1,0 +1,67 @@
+﻿@model IEnumerable<Entity_CodeFirst.Models.peopleinfo>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Претенденты на животных. Страница редактирования</h2>
+<ul>
+    <li>
+        @Html.ActionLink("Претенденты на животных", "Persons", "Home",  new { area = "" }, new { @class = "article3" })
+
+    </li>
+    <li>@Html.ActionLink("Создать учётную запись нового претендента", "Create", new { area = "" }, new { @class = "article3" }) </li>
+</ul>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Surname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.kindanimals1.KindAnimal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.region1.City)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Surname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.kindanimals1.KindAnimal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.region1.City)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.idpeopleInfo }) |
+            @Html.ActionLink("Details", "Details", new { id=item.idpeopleInfo }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.idpeopleInfo })
+        </td>
+    </tr>
+}
+
+</table>

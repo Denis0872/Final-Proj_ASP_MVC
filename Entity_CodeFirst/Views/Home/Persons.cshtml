@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Entity_CodeFirst.Models.peopleinfo>
+@{
+    ViewBag.Title = "Persons";
+}
+
+<h2>Persons</h2>
+<div class="row">
+    <div>
+        <h3>Информация о претендентах</h3>
+        <table width="100%" border="1">
+            <tr>
+                <td width="14%"><p>Имя</p></td>
+                <td width="14%"><p>Фамилия</p></td>
+                <td width="14%"><p>Адрес</p></td>
+                <td width="14%"><p>Телефон</p></td>
+                <td width="14%"><p>Животное</p></td>
+                <td width="14%"><p>Регион</p></td>
+                <td width="14%"><p>Редактирование</p></td>
+            </tr>
+
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Surname)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Address)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Phone)</td>
+                    <td>@Html.DisplayFor(modelItem => item.kindAnimals)</td>
+                    <td>@Html.DisplayFor(modelItem => item.region)</td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.idpeopleInfo }) 
+                        @Html.ActionLink("Details", "Details", new { id = item.idpeopleInfo }) 
+                        @Html.ActionLink("Delete", "Delete", new { id = item.idpeopleInfo })
+                    </td>
+                </tr>
+            }
+        </table>
+
+        
+
+    </div>
+</div>
+

@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Entity_CodeFirst.Models.shelter>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Приюты. Страница редактирования</h2>
+<ul>
+    <li>
+        @Html.ActionLink("Приюты", "Shelters", "Home", new { area = "" }, new { @class = "article3" })
+    </li>
+    <li>
+        @Html.ActionLink("Создать новый аккаунт для приюта", "Create", new { area = "" }, new { @class = "article3" })
+    </li>
+</ul>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.region.City)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Adress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LimitAnimals)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CountAnimals)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.region.City)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Adress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LimitAnimals)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CountAnimals)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.idshelter }) |
+            @Html.ActionLink("Details", "Details", new { id=item.idshelter }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.idshelter })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewBag.Title = "Admin";
+}
+
+<h2>Admin</h2>
+<div >
+    <ul>
+        <li>Админ</li>
+        <li>@Html.ActionLink("Cписок животных для редактирования", "Index", "EditIAA")</li>
+        <li>@Html.ActionLink("Список претендентов на животных", "Index", "Person")</li>
+        <li>@Html.ActionLink("Список приютов для животных", "Index", "Shelter")</li>
+    </ul>
+</div>

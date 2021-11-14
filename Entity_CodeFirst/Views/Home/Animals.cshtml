@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Entity_CodeFirst.Models.infoaboutanimal>
+
+@{
+
+    ViewBag.Title = "Главная страница";
+}
+
+<div class="row">
+    <div class="col-md-7" >
+        <h3>Информация о животных</h3>
+        <table width="100%" border="1">
+            <tr>
+                <td width="11%"><p>Номер</p></td>
+                <td width="11%"><p>Имя животного</p></td>
+                <td width="11%"><p>Вес</p>
+                <td width="11%"><p>Рост</p></td>
+                <td width="11%"><p>Времени в приюте в месяцах</p></td>
+                <td width="11%"><p>Размер взрослого животного</p></td>
+                <!-- <td width="11%"><p>Фото животного</p></td>-->
+                <td width="11%"><p>Болезнь</p></td>
+                <td width="12%"><p>Редактирование</p></td>
+
+
+
+
+                @foreach (var item in Model)
+                {
+<tr>
+                <td>@Html.DisplayFor(modelItem => item.IdinfoAboutAnimal)</td>
+                <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                <td>@Html.DisplayFor(modelItem => item.Weight)</td>
+                <td>@Html.DisplayFor(modelItem => item.Height)</td>
+                <td>@Html.DisplayFor(modelItem => item.Durationin_in__helter_in_monthes)</td>
+                <td>@Html.DisplayFor(modelItem => item.SizeAnimal)</td>
+                <!-- <td>@Html.DisplayFor(modelItem => item.PhotoAnimal)</td>-->
+                <td>@Html.DisplayFor(modelItem => item.deseases1.desease)</td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.IdinfoAboutAnimal }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.IdinfoAboutAnimal }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.IdinfoAboutAnimal })
+                </td>
+
+            </tr>
+            }
+        </table>
+
+
+
+    </div>
+</div>

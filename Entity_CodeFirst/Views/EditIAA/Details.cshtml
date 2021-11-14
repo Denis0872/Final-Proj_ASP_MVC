@@ -1,0 +1,74 @@
+﻿@model Entity_CodeFirst.Models.infoaboutanimal
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>infoaboutanimal</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Weight)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Weight)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Height)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Height)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Durationin_in__helter_in_monthes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Durationin_in__helter_in_monthes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Deseases)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Deseases)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SizeAnimal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SizeAnimal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhotoAnimal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhotoAnimal)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdinfoAboutAnimal }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

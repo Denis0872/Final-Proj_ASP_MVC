@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Entity_CodeFirst.Models.shelter>
+
+@{
+
+    ViewBag.Title = "Главная страница";
+}
+
+<div class="row">
+    <div >
+        <h3>Информация о приютах для животных</h3>
+        <table width="100%" border="1">
+            <tr>
+                <td width="14%"><p>Город</p></td>
+                <td width="14%"><p>Номер</p></td>
+                <td width="14%"><p>Адрес</p></td>
+                <td width="14%"><p>Телефон</p></td>
+                <td width="14%"><p>Вместимость</p></td>
+                <td width="14%"><p>Сейчас животных</p></td>
+                <td width="14%"><p>Редактирование</p></td>
+            </tr>
+
+
+            @foreach (var item in Model)
+            {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.region.City)</td>
+            <td>@Html.DisplayFor(modelItem => item.idshelter)</td>
+            <td>@Html.DisplayFor(modelItem => item.Adress)</td>
+            <td>@Html.DisplayFor(modelItem => item.Phone)</td>
+            <td>@Html.DisplayFor(modelItem => item.LimitAnimals)</td>
+            <td>@Html.DisplayFor(modelItem => item.CountAnimals)</td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.idshelter }) |
+                @Html.ActionLink("Details", "Details", new { id = item.idshelter }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.idshelter })
+            </td>
+        </tr>
+            }
+        </table>
+
+
+
+    </div>
+</div>

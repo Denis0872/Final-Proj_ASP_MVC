@@ -18,7 +18,7 @@ namespace Entity_CodeFirst.Controllers
         
         public ActionResult Index()
         {
-            ViewBag.message = "Главная стираница";
+            ViewBag.message = "Главная страница";
             return View();
         }
 
